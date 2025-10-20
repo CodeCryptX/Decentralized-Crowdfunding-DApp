@@ -1,0 +1,232 @@
+export const CROWDFUNDING_ABI = [
+  {
+    type: "constructor",
+    inputs: [
+      { name: "_kycRegistry", type: "address", internalType: "address" },
+    ],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "campaignCount",
+    inputs: [],
+    outputs: [{ name: "", type: "uint256", internalType: "uint256" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "campaigns",
+    inputs: [{ name: "", type: "uint256", internalType: "uint256" }],
+    outputs: [
+      { name: "title", type: "string", internalType: "string" },
+      { name: "description", type: "string", internalType: "string" },
+      { name: "goal", type: "uint256", internalType: "uint256" },
+      { name: "fundsRaised", type: "uint256", internalType: "uint256" },
+      { name: "creator", type: "address", internalType: "address" },
+      { name: "active", type: "bool", internalType: "bool" },
+      { name: "completed", type: "bool", internalType: "bool" },
+      { name: "withdrawn", type: "bool", internalType: "bool" },
+    ],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "contribute",
+    inputs: [{ name: "campaignId", type: "uint256", internalType: "uint256" }],
+    outputs: [],
+    stateMutability: "payable",
+  },
+  {
+    type: "function",
+    name: "createCampaign",
+    inputs: [
+      { name: "title", type: "string", internalType: "string" },
+      { name: "description", type: "string", internalType: "string" },
+      { name: "goal", type: "uint256", internalType: "uint256" },
+    ],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "getCampaign",
+    inputs: [{ name: "campaignId", type: "uint256", internalType: "uint256" }],
+    outputs: [
+      {
+        name: "",
+        type: "tuple",
+        internalType: "struct Crowdfunding_HassanMurtaza.Campaign",
+        components: [
+          { name: "title", type: "string", internalType: "string" },
+          {
+            name: "description",
+            type: "string",
+            internalType: "string",
+          },
+          { name: "goal", type: "uint256", internalType: "uint256" },
+          {
+            name: "fundsRaised",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          { name: "creator", type: "address", internalType: "address" },
+          { name: "active", type: "bool", internalType: "bool" },
+          { name: "completed", type: "bool", internalType: "bool" },
+          { name: "withdrawn", type: "bool", internalType: "bool" },
+        ],
+      },
+    ],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "kycRegistry",
+    inputs: [],
+    outputs: [
+      {
+        name: "",
+        type: "address",
+        internalType: "contract KYCRegistry_HassanMurtaza",
+      },
+    ],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "owner",
+    inputs: [],
+    outputs: [{ name: "", type: "address", internalType: "address" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "renounceOwnership",
+    inputs: [],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "transferOwnership",
+    inputs: [{ name: "newOwner", type: "address", internalType: "address" }],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "withdraw",
+    inputs: [{ name: "campaignId", type: "uint256", internalType: "uint256" }],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "event",
+    name: "CampaignCreated",
+    inputs: [
+      {
+        name: "campaignId",
+        type: "uint256",
+        indexed: true,
+        internalType: "uint256",
+      },
+      {
+        name: "creator",
+        type: "address",
+        indexed: true,
+        internalType: "address",
+      },
+      {
+        name: "title",
+        type: "string",
+        indexed: false,
+        internalType: "string",
+      },
+      {
+        name: "goal",
+        type: "uint256",
+        indexed: false,
+        internalType: "uint256",
+      },
+    ],
+    anonymous: false,
+  },
+  {
+    type: "event",
+    name: "ContributionReceived",
+    inputs: [
+      {
+        name: "campaignId",
+        type: "uint256",
+        indexed: true,
+        internalType: "uint256",
+      },
+      {
+        name: "contributor",
+        type: "address",
+        indexed: true,
+        internalType: "address",
+      },
+      {
+        name: "amount",
+        type: "uint256",
+        indexed: false,
+        internalType: "uint256",
+      },
+    ],
+    anonymous: false,
+  },
+  {
+    type: "event",
+    name: "FundsWithdrawn",
+    inputs: [
+      {
+        name: "campaignId",
+        type: "uint256",
+        indexed: true,
+        internalType: "uint256",
+      },
+      {
+        name: "creator",
+        type: "address",
+        indexed: true,
+        internalType: "address",
+      },
+      {
+        name: "amount",
+        type: "uint256",
+        indexed: false,
+        internalType: "uint256",
+      },
+    ],
+    anonymous: false,
+  },
+  {
+    type: "event",
+    name: "OwnershipTransferred",
+    inputs: [
+      {
+        name: "previousOwner",
+        type: "address",
+        indexed: true,
+        internalType: "address",
+      },
+      {
+        name: "newOwner",
+        type: "address",
+        indexed: true,
+        internalType: "address",
+      },
+    ],
+    anonymous: false,
+  },
+  {
+    type: "error",
+    name: "OwnableInvalidOwner",
+    inputs: [{ name: "owner", type: "address", internalType: "address" }],
+  },
+  {
+    type: "error",
+    name: "OwnableUnauthorizedAccount",
+    inputs: [{ name: "account", type: "address", internalType: "address" }],
+  },
+];
