@@ -2,7 +2,7 @@
 
 A full-stack decentralized crowdfunding platform on Ethereum with KYC verification.
 
-**Developed by Hassan Murtaza (HassanMurtaza-i221110)**
+**Developed by Hassan Murtaza**
 
 ---
 
@@ -18,7 +18,7 @@ A full-stack decentralized crowdfunding platform on Ethereum with KYC verificati
 ## 📦 Project Structure
 
 ```
-Assignment_2/
+Decentralized-Crowdfunding-DApp/
 ├── foundry/         # Smart contracts (Solidity + Foundry)
 ├── frontend/        # React frontend (Vite + Tailwind)
 ├── README.md        # This file
@@ -101,7 +101,7 @@ npm run dev
 
 ## 👨‍💻 Developer
 
-**Hassan Murtaza (HassanMurtaza-i221110)**
+**Hassan Murtaza**
 
 ---
 
